@@ -26,7 +26,7 @@ RUN add-apt-repository -y ppa:mozillateam/ppa && \
     apt update && apt install -y firefox
 
 # Create a user with sudo privileges and set up their home directory
-RUN useradd -m arash -s $(which zsh) -p $(openssl passwd -1 arash) && \
+RUN useradd -m username -s $(which zsh) -p $(openssl passwd -1 password) && \
     usermod -aG sudo arash
 
 # Install Oh My Zsh and Powerlevel10k theme
