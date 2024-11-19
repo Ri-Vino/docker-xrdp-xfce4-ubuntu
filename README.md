@@ -37,7 +37,7 @@ This Docker image sets up an Ubuntu-based environment with XFCE as the desktop e
    ```
 This will run the container in the background, exposing port 3389 for remote desktop access.
 
-4. **Access the Container via XRDP**: Use an XRDP-compatible client (such as Remote Desktop Connection on Windows) to connect to localhost:3389. Log in with the username arash and the password arash (or change the credentials as needed).
+4. **Access the Container via XRDP**: Use an XRDP-compatible client (such as Remote Desktop Connection on Windows) to connect to localhost:3389. Log in with the username "username" and the password "password" (or change the credentials as needed).
 
 5. **Customize the Environment**: You can edit the Dockerfile or add additional applications as needed. The container is designed to be flexible and easy to extend.
 
