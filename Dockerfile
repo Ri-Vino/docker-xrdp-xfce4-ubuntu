@@ -27,7 +27,7 @@ RUN add-apt-repository -y ppa:mozillateam/ppa && \
 
 # Create a user with sudo privileges and set up their home directory
 RUN useradd -m username -s $(which zsh) -p $(openssl passwd -1 password) && \
-    usermod -aG sudo arash
+    usermod -aG sudo username
 
 # Install Oh My Zsh and Powerlevel10k theme
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
@@ -41,11 +41,11 @@ RUN git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/cust
 
 # Configure XRDP to start XFCE
 RUN adduser xrdp ssl-cert && \
-    echo "xfce4-session" > /home/arash/.xsession && \
-    chown arash:arash /home/arash/.xsession
+    echo "xfce4-session" > /home/username/.xsession && \
+    chown username:username /home/username/.xsession
 
 # Set Zsh as the default shell for the new user
-RUN chsh -s $(which zsh) arash
+RUN chsh -s $(which zsh) username
 
 # Expose the XRDP port for remote access
 EXPOSE 3389
